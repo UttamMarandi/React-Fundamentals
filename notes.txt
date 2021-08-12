@@ -1,0 +1,17 @@
+//start react-app
+npx install create-react-app app-name
+
+//start the development server
+yarn start 
+or
+npm start //doubt
+
+//create a production build
+yarn build
+
+//stop the dev server
+Ctrl + C
+
+//To create a component
+//start the component name with a capital letter
+ex- function Greeting() //Greeting is a component
