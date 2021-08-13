@@ -1,6 +1,11 @@
 import React from "react" //this code not specific to react app
 import ReactDom from "react-dom" //need to use .render() method
 
+//CSS
+import "./index.css"
+
+
+
 //SESSION1
 
 // function Greeting() { //Greeting is a component and component name has to start with capital letter
@@ -78,7 +83,7 @@ import ReactDom from "react-dom" //need to use .render() method
 
 function BookList() {
     return(
-        <section>
+        <section className= "booklist"> 
             <Book/>
             <Book/>
             <Book/>
@@ -90,7 +95,7 @@ function BookList() {
 
 const Book = () => {
     return(
-        <article>
+        <article className="book">
             <Img/>
             <Title/>
             <Author/>
