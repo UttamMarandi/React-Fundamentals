@@ -121,13 +121,24 @@ function BookList() {
 
             {/* use an object for books data */}
             {books.map((book)=>{
-                // const{ author, title, imgur} = book
+                // const{ author, title, imgur, key} = book
+                console.log("book id", book.id);
                 return (
                     // Instead of returning jsx we can also return a component
-                    //Also we can pass destructured {book} as a parameter to <Book4/> component
-                    <Book4 book = {book}>
+                    //Also we can pass book object{book} as a book parameter to <Book4/> component
+                    
+                    <Book4 key={book.id} book = {book}>
                             
                     </Book4>
+                )
+            })}
+            {/* use destrucuting for book */}
+            {books.map((book)=>{
+                return(
+                    <Book5 key ={book.id} {...book}> 
+
+                    </Book5>
+
                 )
             })}
             
@@ -214,16 +225,18 @@ const Book3 =({imgur,author,title, children}) => { //props value is set up in th
 
 const books = [
      {
+    id : 1,
     title : "Billy Summers",
     author : "Stephen King",
     imgur : "https://images-na.ssl-images-amazon.com/images/I/51vSbWpF+dS._SY344_BO1,204,203,200_.jpg",
 },
 {
+    id : 2,
     title : "Atomic Habits",
     author : "James Clear",
     imgur : "https://images-na.ssl-images-amazon.com/images/I/51EU9naCcwL._SX325_BO1,204,203,200_.jpg",
 },
-{
+{   id : 3,
     title : "The Psychology of Money",
     author : " Morgan Housel",
     imgur : "https://images-eu.ssl-images-amazon.com/images/I/41cWqh0OeQL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",   
@@ -238,9 +251,9 @@ const newName = names.map((name)=> {
     )
 })
 console.log(newName);
-const Book4 =(props) => {
+const Book4 =(props) => { //here props is an object that contains the book obj
     const {imgur,author,title} = props.book //props.book b.c book is an object with props object
-    console.log("props in book 4",props);
+    console.log("props if we don't use destructuring",props);
     return(
         <article className="book">
             <img src={imgur} alt="img" />
@@ -249,6 +262,22 @@ const Book4 =(props) => {
         </article>
     )
 }
+
+
+//Iteration 5
+//Use destructuring for book object
+
+const Book5 = (props) => { //here props is not the object but all the properties i.e object inside the object , so we can access them directly
+    console.log("props if we use destructuing",props);
+    const {author,title,imgur} = props
+    return(
+        <article className="book">
+            <img src={imgur} alt="img" />
+            <h2>{title}</h2> 
+            <h3>{author}</h3>
+        </article>
+    )
+} 
 
 
 
