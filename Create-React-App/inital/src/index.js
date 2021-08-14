@@ -78,7 +78,7 @@ import "./index.css"
 //.render() takes two parameter , a.the component which needs to render. b.the place where it needs to be rendered
 
 
-///SESSION 2
+///SESSION 2 :Iteration 2
 //CREATE A BOOKLIST
 
 
@@ -106,18 +106,33 @@ function BookList() {
         <section className= "booklist"> 
             <Book/>
             <Book/>
-            <Book/>
-            <Book/>
             <Book2/>
             <Book2/>
-            <Book2/>
-            <Book2/>
-        
-            <Book3 title = {secondBook.title} imgur = {secondBook.imgur} author = {secondBook.author} />
+    
+            <Book3 title = {secondBook.title} imgur = {secondBook.imgur} author = {secondBook.author}>
+             <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iure neque omnis necessitatibus sunt in sint dolores consequuntur officia, facilis, excepturi fuga labore doloribus totam error praesentium hic nulla laudantium?
+            </p>
+            </Book3>
+           
             <Book3 title = {thirdBook.title} imgur = {thirdBook.imgur} author = {thirdBook.author}/>
-            <Book3/>
+            {/* use array of objects as Books data */}
+            {newName}
 
-
+            {/* use an object for books data */}
+            {books.map((book)=>{
+                // const{ author, title, imgur} = book
+                return (
+                    // Instead of returning jsx we can also return a component
+                    //Also we can pass destructured {book} as a parameter to <Book4/> component
+                    <Book4 book = {book}>
+                            
+                    </Book4>
+                )
+            })}
+            
+            
+            
         </section>
     )
 }
@@ -153,7 +168,9 @@ const Author = () => {
 //all the css added in this way will be inline
 
 
+//Iteration 2
 //Create book type2 and remove nested components and add img, title, and name in one compnoent
+
 
 const Book2 =() => {
     
@@ -169,10 +186,10 @@ const Book2 =() => {
 //acess variable within jsx using {} braces
 //but we can't use statements like assigments within {} b.c it is within return
 
-
+//Iteration 3
 //Create Book3 and add parameter to make book more dynamic
 
-const Book3 =({imgur,author,title}) => { //props value is set up in the place where the component is used
+const Book3 =({imgur,author,title, children}) => { //props value is set up in the place where the component is used
     
     //destructuring props
     // const {imgur , author , title} = props
@@ -183,12 +200,57 @@ const Book3 =({imgur,author,title}) => { //props value is set up in the place wh
             <img src={imgur} alt="img" />
             <h2>{title}</h2> 
             <h3>{author}</h3>
-            
+            {children}
+            {/* In order to access content within the comopnent , we use {children} property..Name has to be children */}
         </article>
     )
 }
 //for the values that we have passed , we can access them using props.key
 //only the component that passed the key=value can access it 
+
+//SESSION 3 
+//Iteration 4
+//Use array of objects for as data for bookilst
+
+const books = [
+     {
+    title : "Billy Summers",
+    author : "Stephen King",
+    imgur : "https://images-na.ssl-images-amazon.com/images/I/51vSbWpF+dS._SY344_BO1,204,203,200_.jpg",
+},
+{
+    title : "Atomic Habits",
+    author : "James Clear",
+    imgur : "https://images-na.ssl-images-amazon.com/images/I/51EU9naCcwL._SX325_BO1,204,203,200_.jpg",
+},
+{
+    title : "The Psychology of Money",
+    author : " Morgan Housel",
+    imgur : "https://images-eu.ssl-images-amazon.com/images/I/41cWqh0OeQL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",   
+}
+]
+//iterate over an  array and render in ui
+const names = ["uttam","tommy","tarun"]
+const newName = names.map((name)=> {
+    console.log(name);
+    return (
+        <h2>{name}</h2>
+    )
+})
+console.log(newName);
+const Book4 =(props) => {
+    const {imgur,author,title} = props.book //props.book b.c book is an object with props object
+    console.log("props in book 4",props);
+    return(
+        <article className="book">
+            <img src={imgur} alt="img" />
+            <h2>{title}</h2> 
+            <h3>{author}</h3>
+        </article>
+    )
+}
+
+
 
 
 ReactDom.render(<BookList/> , document.getElementById("root"))
