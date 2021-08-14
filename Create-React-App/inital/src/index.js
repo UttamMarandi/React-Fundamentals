@@ -4,6 +4,14 @@ import ReactDom from "react-dom" //need to use .render() method
 //CSS
 import "./index.css"
 
+//FILES
+import {books} from "./books"
+//curly braces b.c it is a named export
+//books is the structure data for which export is defined and "./books" is the file in which it is present
+import Book6 from "./book"
+//here Book6 is a default export , We don't need to use curly braces for default export
+//also each file can have only one default inport , here it is Book6
+//we can use any name while importing the structure  data , but we have to keep in mind that we need to change all the "Book6" used in this file to that specific name
 
 
 //SESSION1
@@ -230,27 +238,7 @@ const Book3 =({imgur,author,title, children}) => { //props value is set up in th
 
 //SESSION 3 
 //Iteration 4
-//Use array of objects for as data for bookilst
 
-const books = [
-     {
-    id : 1,
-    title : "Billy Summers",
-    author : "Stephen King",
-    imgur : "https://images-na.ssl-images-amazon.com/images/I/51vSbWpF+dS._SY344_BO1,204,203,200_.jpg",
-},
-{
-    id : 2,
-    title : "Atomic Habits",
-    author : "James Clear",
-    imgur : "https://images-na.ssl-images-amazon.com/images/I/51EU9naCcwL._SX325_BO1,204,203,200_.jpg",
-},
-{   id : 3,
-    title : "The Psychology of Money",
-    author : " Morgan Housel",
-    imgur : "https://images-eu.ssl-images-amazon.com/images/I/41cWqh0OeQL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",   
-}
-]
 //iterate over an  array and render in ui
 const names = ["uttam","tommy","tarun"]
 const newName = names.map((name)=> {
@@ -291,34 +279,7 @@ const Book5 = (props) => { //here props is not the object but all the properties
 
 //Iteration 6
 //Set up an event
-const Book6 = (props) => { 
-    const {author,title,imgur} = props
-    const clickHandler = (e) => { //reference example
-        alert("book selected")
-        console.log(e); //e is event object
-        console.log(e.target); ///e.target shows the html element that is clicked
-        
-    }
-    const complexExample = (e,author) => {
-        console.log(author); //author gets logged the moment DOM is rendered. this is not expected for a click event
-        //If we have to pass an argument to our reference function then we must wrap it inside an arrow function in onClick statement
-        
-    }
-
-    return(
-        <article className="book">
-            <img src={imgur} alt="img" />
-            <h2 onClick={()=> console.log(title)}>{title}</h2> 
-            <h3>{author}</h3>
-            <button type="button" onClick={clickHandler}>Clcik Me : Reference example</button>
-            <button onClick={()=> alert("book selected inline")}>Click Me Inline example</button>
-            {/* Inline example */}
-            <h2></h2>
-            <button type="button" onClick={()=>complexExample(author)}>More Complex example</button>
-            {/* //If we have to pass an argument here (author) to our reference function then we must wrap it inside an arrow function in onClick statement */}
-        </article>
-    )
-} 
+//code in book.js
 
 
 
