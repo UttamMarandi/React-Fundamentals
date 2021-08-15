@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+//every react hook name start with "use"
+//component name starts with uppercase
+//the returned hook funciton like setText() needs to be inside the function / component body
+//cannot call react hooks conditionally 
+//Note :- here react hook is useState() and the function returned is setText(). we can call setText() within a condition but not useState()
+
 //useState is a function coming from react , It is a named component . here React is default component
 
 
