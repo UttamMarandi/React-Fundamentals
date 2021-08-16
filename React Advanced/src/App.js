@@ -6,7 +6,8 @@ import React from 'react'
 // import Setup5 from "./tutorial/1-useState/setup/5-useState-counter"
 // import Setup6 from "./tutorial/2-useEffect/setup/1-useEffect-basics"
 // import Setup7 from "./tutorial/2-useEffect/setup/2-useEffect-cleanup"
-import Setup8 from "./tutorial/2-useEffect/setup/3-useEffect-fetch-data"
+// import Setup8 from "./tutorial/2-useEffect/setup/3-useEffect-fetch-data"
+import Setup9 from "./tutorial/3-conditional-rendering/setup/1-multiple-returns"
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
 
       {/* <Setup7/> */}
 
-      <Setup8/>
+      {/* <Setup8/> */}
+
+      <Setup9/>
       
     </div>
   )
