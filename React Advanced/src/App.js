@@ -3,7 +3,8 @@ import React from 'react'
 // import Setup2 from "./tutorial/1-useState/setup/2-useState-basics"
 // import Setup3 from "./tutorial/1-useState/setup/3-useState-array"
 // import Setup4 from "./tutorial/1-useState/setup/4-useState-object"
-import Setup5 from "./tutorial/1-useState/setup/5-useState-counter"
+// import Setup5 from "./tutorial/1-useState/setup/5-useState-counter"
+import Setup6 from "./tutorial/2-useEffect/setup/1-useEffect-basics"
 
 
 function App() {
@@ -17,7 +18,10 @@ function App() {
       {/* <Setup3/> */}
       
       {/* <Setup4/> */}
-      <Setup5/>
+      
+      {/* <Setup5/> */}
+
+      <Setup6/>
       
     </div>
   )
