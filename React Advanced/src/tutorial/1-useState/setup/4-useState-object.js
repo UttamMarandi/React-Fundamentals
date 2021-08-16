@@ -28,7 +28,7 @@ const UseStateObject = () => {
     <h3>{person.message}</h3>
     <button className="btn" onClick={()=> changeMessage()}>change message</button>
 
-    {/* specific use state */}
+    {/* specific useState */}
     <h2>Specific useState</h2>
     <h3>{name}</h3>
     <button className="btn" onClick={()=>{setName("Joey")}}>change Name</button>
