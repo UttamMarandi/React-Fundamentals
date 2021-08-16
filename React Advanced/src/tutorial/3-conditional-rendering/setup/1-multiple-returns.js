@@ -7,16 +7,59 @@ const MultipleReturns = () => {
 
   //Conditional Rendering
   
-  const [loading , setLoading] = useState(true)
+  const [isLoading , setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
+  const [user, setUser] = useState("default user")
 
-  if(loading) {
-    return <h2>Loading...</h2>
+  //create a conditinol rendering where if there is no error and loading is true , then render the user
+
+  useEffect(()=>{
+    // setimeout to see Loading... for long time
+    setTimeout(()=>{
+      fetch(url)
+      .then((response)=>{ 
+        if(response.status >=200 && response.status< 299){
+          return response.json()
+        }
+        else {
+          setIsLoading(false)
+          setIsError(true)
+          throw new Error(response.statusText)
+        }
+      })
+      .then((user)=>{
+        const {login} = user
+        setUser(login)
+        setIsLoading(false)
+      })
+      .then((user)=> console.log(user))
+      .catch((err) => console.log(err))
+      },2000)
+  },[])
+
+  if(isLoading) {
+    return (
+      <div>
+        <h2>Loading...</h2>
+      </div>
+    )
   }
-  else{
-    return <h2>multiple returns</h2>;
+  if(isError) {
+    return (
+      <div>
+        <h2>Error...</h2>
+      </div>
+    )
   }
-  //conditional rendering
   
+  return(
+    <div>
+      <h2>{user}</h2>
+    </div>
+  )
+ 
+  //conditional rendering
+
 };
 
 export default MultipleReturns;
