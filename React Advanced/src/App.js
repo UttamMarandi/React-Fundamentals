@@ -10,7 +10,9 @@ import React from 'react'
 // import Setup9 from "./tutorial/3-conditional-rendering/setup/1-multiple-returns"
 // import Setup10 from "./tutorial/3-conditional-rendering/setup/2-short-circuit"
 // import Setup11 from "./tutorial/3-conditional-rendering/setup/3-show-hide"
-import Setup12 from "./tutorial/4-forms/setup/1-controlled-inputs"
+// import Setup12 from "./tutorial/4-forms/setup/1-controlled-inputs"
+import Setup13 from "./tutorial/4-forms/setup/2-multiple-inputs"
+
 
 function App() {
   return (
@@ -38,7 +40,9 @@ function App() {
 
       {/* <Setup11/> */}
 
-      <Setup12/>
+      {/* <Setup12/> */}
+
+      <Setup13/>
 
     </div>
   )
