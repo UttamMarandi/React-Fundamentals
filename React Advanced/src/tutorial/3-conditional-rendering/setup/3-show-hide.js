@@ -24,7 +24,8 @@ const Item = () => {
     return(()=> {
       window.removeEventListener("resize",checkSize)
     })
-  },[])
+    // clean up funciton 
+  })
 
   return(
     <>
