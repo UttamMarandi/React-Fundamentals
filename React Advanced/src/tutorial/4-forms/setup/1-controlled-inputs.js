@@ -16,6 +16,7 @@ const ControlledInputs = () => {
   
   const [firstName , setFirstName] = useState("")
   const [email,setEmail] = useState("")
+  const [people , setPeople] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault() //we need to prevent thr browser's default funcitonality of submitting
@@ -26,8 +27,31 @@ const ControlledInputs = () => {
   const handleClick = (e) => {
     e.preventDefault() 
     console.log("Hello World from handleCLick");
+
+    //submit the form only when firstName and email has value
+    if(firstName && email) {
+      console.log("submit the form");
+
+      //create an object that stores firstName and email
+      const person = {
+        id: new Date().getTime().toString(),firstName,email
+      }
+      //add the object to people array
+      setPeople((people)=> {
+        return [...people , person] //we are returning person along with whaterver is in people
+      })
+      //set firstName and email to empty string ready for next input
+      setFirstName("")
+      setEmail("")
+      console.log("person" , person);
+
+    }
+    else {
+      console.log("empty values");
+    }
   }
   console.log("firstName value",firstName);
+  
   return (
     // In react we have two options , either we can add onSubit to form to submit the button, or we can add an onClick to the button within form tag
     //if we use onClick on form , then Hello World is logged the moment we click on any area of the form
@@ -45,6 +69,17 @@ const ControlledInputs = () => {
       </div>
       <button className="btn" onClick= {handleClick}>Add Person</button>
       </form>
+      {people.map((person)=> {
+        const {email , firstName,id} = person
+        return(
+          <>
+          <div className="item" key = {id}>
+              <h4>{firstName}</h4>
+              <h4>{email}</h4>
+          </div>
+          </>
+        )
+      })}
     </article>
     </>
   );
