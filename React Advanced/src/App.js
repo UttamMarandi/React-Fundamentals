@@ -11,7 +11,8 @@ import React from 'react'
 // import Setup10 from "./tutorial/3-conditional-rendering/setup/2-short-circuit"
 // import Setup11 from "./tutorial/3-conditional-rendering/setup/3-show-hide"
 // import Setup12 from "./tutorial/4-forms/setup/1-controlled-inputs"
-import Setup13 from "./tutorial/4-forms/setup/2-multiple-inputs"
+// import Setup13 from "./tutorial/4-forms/setup/2-multiple-inputs"
+import Setup14 from "./tutorial/5-useRef/setup/1-useRef-basics"
 
 
 function App() {
@@ -42,7 +43,9 @@ function App() {
 
       {/* <Setup12/> */}
 
-      <Setup13/>
+      {/* <Setup13/> */}
+
+      <Setup14/>
 
     </div>
   )
