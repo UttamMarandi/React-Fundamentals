@@ -8,7 +8,8 @@ import React from 'react'
 // import Setup7 from "./tutorial/2-useEffect/setup/2-useEffect-cleanup"
 // import Setup8 from "./tutorial/2-useEffect/setup/3-useEffect-fetch-data"
 // import Setup9 from "./tutorial/3-conditional-rendering/setup/1-multiple-returns"
-import Setup10 from "./tutorial/3-conditional-rendering/setup/2-short-circuit"
+// import Setup10 from "./tutorial/3-conditional-rendering/setup/2-short-circuit"
+import Setup11 from "./tutorial/3-conditional-rendering/setup/3-show-hide"
 
 function App() {
   return (
@@ -32,7 +33,10 @@ function App() {
 
       {/* <Setup9/> */}
       
-      <Setup10/>
+      {/* <Setup10/> */}
+
+      <Setup11/>
+      
     </div>
   )
 }
