@@ -4,7 +4,7 @@ import { data } from '../../../data';
 import { reducer } from './reducer';
 
 //useReducer hooks takes two parameters , a. the reducer function which takes the state and action as it's parameter , b. the defaultState
-//useReducer hook  returns an array containig two elements state value and dispatch function.
+//useReducer hook  returns an array containig two elements : state value and dispatch function.
 //reducer function always return some type of state
 
 
