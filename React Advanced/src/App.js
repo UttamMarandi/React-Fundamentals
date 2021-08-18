@@ -12,9 +12,14 @@ import React from 'react'
 // import Setup11 from "./tutorial/3-conditional-rendering/setup/3-show-hide"
 // import Setup12 from "./tutorial/4-forms/setup/1-controlled-inputs"
 // import Setup13 from "./tutorial/4-forms/setup/2-multiple-inputs"
-import Setup14 from "./tutorial/5-useRef/setup/1-useRef-basics"
+// import Setup14 from "./tutorial/5-useRef/setup/1-useRef-basics"
+import Setup15 from "./tutorial/6-useReducer/setup/index"
 
 
+
+
+
+// if the folder contains index.js than path to the folder only will also point index.js
 function App() {
   return (
     <div className='container'>
@@ -45,8 +50,9 @@ function App() {
 
       {/* <Setup13/> */}
 
-      <Setup14/>
+      {/* <Setup14/> */}
 
+      <Setup15/>
     </div>
   )
 }
