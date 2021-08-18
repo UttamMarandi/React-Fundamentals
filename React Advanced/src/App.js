@@ -14,7 +14,8 @@ import React from 'react'
 // import Setup13 from "./tutorial/4-forms/setup/2-multiple-inputs"
 // import Setup14 from "./tutorial/5-useRef/setup/1-useRef-basics"
 // import Setup15 from "./tutorial/6-useReducer/setup/index"
-import Setup16 from "./tutorial/7-prop-drilling/setup/1-prop-drilling"
+// import Setup16 from "./tutorial/7-prop-drilling/setup/1-prop-drilling"
+import Setup17 from "./tutorial/8-useContext/setup/1-context-api"
 
 
 
@@ -54,7 +55,9 @@ function App() {
 
       {/* <Setup15/> */}
 
-      <Setup16/>
+      {/* <Setup16/> */}
+
+      <Setup17/>
     </div>
   )
 }
