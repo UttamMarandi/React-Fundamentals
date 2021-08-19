@@ -17,7 +17,8 @@ import React from 'react'
 // import Setup16 from "./tutorial/7-prop-drilling/setup/1-prop-drilling"
 // import Setup17 from "./tutorial/8-useContext/setup/1-context-api"
 // import Setup18 from "./tutorial/9-custom-hooks/setup/1-fetch-example"
-import Setup19 from "./tutorial/10-prop-types/setup/index"
+// import Setup19 from "./tutorial/10-prop-types/setup/index"
+import Setup20 from "./tutorial/11-react-router/setup/index"
 
 
 
@@ -63,7 +64,9 @@ function App() {
 
       {/* <Setup18/> */}
 
-      <Setup19/>
+      {/* <Setup19/> */}
+
+      <Setup20/>
     </div>
   )
 }

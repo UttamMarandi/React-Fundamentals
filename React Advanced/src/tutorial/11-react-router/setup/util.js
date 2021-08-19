@@ -34,11 +34,6 @@ const ReactRouterSetup = () => {
           <Route path = "/people"> 
               <People/>
           </Route>
-          {/* Let's say we want to access one specifice person. for that we can set the path to person and pass the id of that specific person. then we pass children prop to the route which accept the component containing all the person i.e Person */}
-          <Route path='/person/:id' children={<Person />}>
-            
-          </Route>
-
           <Route path ="*">
               <Error/>
           </Route>
