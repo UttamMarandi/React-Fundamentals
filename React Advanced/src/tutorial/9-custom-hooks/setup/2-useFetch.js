@@ -21,4 +21,5 @@ export const useFetch = (url) => {
   //then it needs to return the useState values i.e loading and url
  
   return ({loading , products})
+  //we are passing an object containg loading and products to the component
 };
